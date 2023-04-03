@@ -1,16 +1,6 @@
 ![Astro + Netlify CMS](https://raw.githubusercontent.com/delucis/astro-netlify-cms/HEAD/header.png)
 
-<h1 align="center">Astro Blog Starter with Netlify CMS</h1>
-
-This example is based on [the basic Astro blog starter kit][starter], and
-adds [the Astro Netlify CMS integration][integration].
-
-## Quick deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)][deploy]
-
-☝️ Click this button to copy this project to your own GitHub (or GitLab)
-account and set up continuous deployment with Netlify as if by magic. ✨
+<h1 align="center">Blog com Astro e Netlify CMS</h1>
 
 Once you’ve got the project set up, you do need to
 [activate Netlify Identity in the Netlify UI][identity] and then enable
