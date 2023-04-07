@@ -1,5 +1,5 @@
 ---
-import '../styles/blog.css';
+import '../styles/main.css';
 
 export interface Props {
 	title: string;
@@ -11,13 +11,32 @@ const { title, description, permalink } = Astro.props;
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="msapplication-tap-highlight" content="no" />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+<meta name="author" content="Rodrigo Lima" />
+<meta name="theme-color" content="#4A5361">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" sizes="16x16" href="" />
+<link rel="icon" type="image/x-icon" sizes="32x32" href="" />
+<!-- iPhone Plus Retina-->
+<link rel="apple-touch-icon" sizes="180x180" href="" />
+
+<!-- Add to homescreen for Chrome on Android -->
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="application-name" content="Gaviões da Fiel Torcida" />
+
+<!-- Add to homescreen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="apple-mobile-web-app-title" content="Gaviões da Fiel" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -32,7 +51,3 @@ const { title, description, permalink } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content="https://astro.build/social.png?v=1" />
-
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.gstatic.com" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;700&display=swap" />

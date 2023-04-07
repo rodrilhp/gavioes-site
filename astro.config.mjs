@@ -33,10 +33,9 @@ export default defineConfig({
                 time_format: false,
                 label: 'Publish Date',
               },
-              { name: 'author', widget: 'string', label: 'Author Name', required: false },
-              { name: 'authorURL', widget: 'string', label: 'Author URL', required: false },
-              { name: 'description', widget: 'string', label: 'Description', required: false },
-              { name: 'body', widget: 'markdown', label: 'Post Body' },
+              { name: 'author', widget: 'string', label: 'Autor', required: false },
+              { name: 'description', widget: 'string', label: 'Descrição', required: false },
+              { name: 'body', widget: 'markdown', label: 'Texto' },
               {
                 name: 'layout',
                 widget: 'select',

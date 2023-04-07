@@ -3,12 +3,10 @@
 import BaseHead from '../components/BaseHead.astro';
 import BlogHeader from '../components/BlogHeader.astro';
 import BlogPostPreview from '../components/BlogPostPreview.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 import { SITE } from '../config';
 
-// Component Script:
-// You can write any JavaScript/TypeScript that you'd like here.
-// It will run during the build, but never in the browser.
-// All variables are available to use in the HTML template below.
 let { title } = SITE;
 let description = 'The perfect starter for your perfect blog.';
 let permalink = 'https://example.com/';
@@ -16,71 +14,95 @@ let permalink = 'https://example.com/';
 // Data Fetching: List all Markdown posts in the repo.
 
 let allPosts = await Astro.glob('./posts/*.md');
-allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - 
+new Date(a.frontmatter.publishDate).valueOf());
 ---
 
 <html lang="en">
 	<head>
 		<BaseHead {title} {description} {permalink} />
-
-		<style>
-			header {
-				width: 100%;
-				height: 100%;
-				background-color: var(--theme-bg-offset);
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
-
-			.content {
-				margin-top: 4rem;
-				margin-bottom: 8rem;
-			}
-
-			.content :global(main > * + *) {
-				margin-top: 1rem;
-			}
-
-			.intro {
-				padding-bottom: 4rem;
-				margin-bottom: 2rem;
-				border-bottom: 4px solid var(--theme-divider);
-			}
-
-			.intro > * {
-				margin: 0;
-			}
-
-			.latest {
-				font-size: 2.5rem;
-				font-weight: 700;
-			}
-
-			footer {
-				text-align: center;
-			}
-		</style>
 	</head>
 
 	<body>
+		<Header />
+		<div class="hero">
+			<div class="container">
+				<div class="hero-img">
+					<img src="/hero02.jpg" alt="Imagem da torcida">
+				</div>
+			</div>
+		</div>
+		<div class="lojinha">
+			<div class="container">
+				<h2 class="page-title">Loja virtual</h2>
+				<p class="page-text">Fique por dentro dos últimos lançamentos e conheça os produtos 
+					exclusivos da nova loja virtual dos Gaviões.
+				</p>
+				<div class="carousel"></div>
+			</div>
+		</div>
+		<div class="ads">
+			<div class="container">
+				<div class="anuncio-row">
+					<div class="anuncio-item">
+						<img src="/anuncio01.png" alt="">
+					</div>
+					<div class="anuncio-item">
+						<img src="/anuncio02.png" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<section class="noticias">
+			<div class="container">
+				<h2 class="page-title">Notícias</h2>
+				<p class="page-text">Últimas notícias e comunicados para a Fiel Torcida.</p>
+
+			</div>
+		</section>
+
+		<section class="ads">
+			<div class="container">
+				<div class="anuncio-row">
+					<div class="anuncio-item">
+						<img src="/anuncio03.png" alt="">
+					</div>
+					<div class="anuncio-item">
+						<img src="/anuncio04.png" alt="">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="social">
+			<div class="container">
+				<h2 class="page-title">Redes sociais</h2>
+				<p class="page-text">
+					Siga os Gaviões da Fiel nas redes sociais e fique por dentro 
+					de tudo que acontece na maior torcida organizada do mundo.
+				</p>
+				<div class="social-links">
+					<a href="" class="social-link" target="_blank">@gavioesoficial</a>
+					<a href="" class="social-link" target="_blank">@gavioesoficial</a>
+					<a href="" class="social-link" target="_blank">@gavioesoficial</a>
+					<a href="" class="social-link" target="_blank">@gavioesoficial</a>
+				</div>
+			</div>
+		</section>
+
 		<BlogHeader />
 		<div class="wrapper">
 			<main class="content">
 				<section class="intro">
-					<h1 class="latest">{title}</h1>
+					<h1 class="latest">Testando{title}</h1>
 					<p>{description}</p>
 				</section>
 				<section aria-label="Blog post list">
 					{allPosts.map((p) => <BlogPostPreview post={p} />)}
 				</section>
 			</main>
-			<footer>
-			<a href="/admin">Admin Dashboard 🔐</a>
-			</footer>
 		</div>
+		<Footer />
 	</body>
 </html>
