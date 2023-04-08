@@ -11,9 +11,9 @@ const { post } = Astro.props;
 		<img src={post.frontmatter.heroImage} alt="" class="card-img">
 	</div>
 	<div class="card-info">
-		<span class="publish-date">{post.frontmatter.publishDate}</span>
+		<p class="publish-date">{post.frontmatter.publishDate}</p>
 		<a href={post.url}><h3 class="title">{post.frontmatter.title}</h3></a>
-		<a href={post.url} class="btn btn-primary">Leia mais</a>
+		<a href={post.url} class="btn"><button class="btn-primary">Leia mais</button></a>
 	</div>
 </div>
 

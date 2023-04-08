@@ -1,0 +1,29 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import BlogPostPreview from '../components/BlogPostPreview.astro';
+
+let allPosts = await Astro.glob('./posts/*.md');
+allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - 
+new Date(a.frontmatter.publishDate).valueOf());
+
+---
+
+<html lang="pt-br">
+    <head>
+		<BaseHead />
+	</head>
+    <Header />
+    
+    <div class="container">
+        <h2 class="page-title">Notícias</h2>
+        <p class="page-text">Últimas notícias e comunicados para a Fiel Torcida.</p>
+        <div class="latest-news">
+            {allPosts.map((post) => <BlogPostPreview post={post} />)}
+        </div>
+        <a href="/noticias" class="btn"></a>
+    </div>
+
+    <Footer />
+</html>
