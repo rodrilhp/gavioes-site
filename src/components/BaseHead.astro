@@ -1,12 +1,5 @@
 ---
 import '../styles/main.css';
-
-export interface Props {
-	title: string;
-	description: string;
-	permalink: string;
-}
-const { title, description, permalink } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -17,9 +10,9 @@ const { title, description, permalink } = Astro.props;
 <meta name="msapplication-tap-highlight" content="no" />
 
 <!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
+<title>Gaviões da Fiel</title>
+<meta name="title" content="Gaviões da Fiel"/>
+<meta name="description" content="Gaviões da Fiel Torcida"/>
 <meta name="author" content="Rodrigo Lima" />
 <meta name="theme-color" content="#4A5361">
 
@@ -40,14 +33,14 @@ const { title, description, permalink } = Astro.props;
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content={permalink} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
+<meta property="og:url" content="https://gavioes.com.br"/>
+<meta property="og:title" content= "Gaviões da Fiel"/>
+<meta property="og:description" content="Gaviões da Fiel Torcida"/>
 <meta property="og:image" content="https://astro.build/social.png?v=1" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={permalink} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
+<meta property="twitter:url" content="https://gavioes.com.br"/>
+<meta property="twitter:title" content= "Gaviões da Fiel"/>
+<meta property="twitter:description" content="Gaviões da Fiel Torcida"/>
 <meta property="twitter:image" content="https://astro.build/social.png?v=1" />

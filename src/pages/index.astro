@@ -5,11 +5,6 @@ import BlogHeader from '../components/BlogHeader.astro';
 import BlogPostPreview from '../components/BlogPostPreview.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE } from '../config';
-
-let { title } = SITE;
-let description = 'The perfect starter for your perfect blog.';
-let permalink = 'https://example.com/';
 
 // Data Fetching: List all Markdown posts in the repo.
 
@@ -18,9 +13,9 @@ allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf()
 new Date(a.frontmatter.publishDate).valueOf());
 ---
 
-<html lang="en">
+<html lang="pt-br">
 	<head>
-		<BaseHead {title} {description} {permalink} />
+		<BaseHead />
 	</head>
 
 	<body>
@@ -58,7 +53,9 @@ new Date(a.frontmatter.publishDate).valueOf());
 			<div class="container">
 				<h2 class="page-title">Notícias</h2>
 				<p class="page-text">Últimas notícias e comunicados para a Fiel Torcida.</p>
-
+				<div class="latest-news">
+					{allPosts.map((post) => <BlogPostPreview post={post} />)}
+				</div>
 			</div>
 		</section>
 
@@ -90,19 +87,6 @@ new Date(a.frontmatter.publishDate).valueOf());
 				</div>
 			</div>
 		</section>
-
-		<BlogHeader />
-		<div class="wrapper">
-			<main class="content">
-				<section class="intro">
-					<h1 class="latest">Testando{title}</h1>
-					<p>{description}</p>
-				</section>
-				<section aria-label="Blog post list">
-					{allPosts.map((p) => <BlogPostPreview post={p} />)}
-				</section>
-			</main>
-		</div>
 		<Footer />
 	</body>
 </html>
